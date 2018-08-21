@@ -42,6 +42,7 @@ for (let y = 0; y < numCol; y++) {
                 board[x][y] = 1;
             } else {
                 board[x][y] = 2;
+                column.removeEventListener("click", checkWinCondition());
             }
             let newNextPlayer = currentPlayer;
             currentPlayer = nextPlayer;
@@ -71,9 +72,11 @@ function winner() {
     if (currentPlayer == "Red") {
         document.body.appendChild(winMessage).style.color = "black";
         // winning text displayed in black
+        column.removeEventListener("click", winner());
     } else {
         document.body.appendChild(winMessage).style.color = "red";
         // winning text displayed in red
+        column.removeEventListener("click", winner());
     }
 }
 
@@ -95,12 +98,12 @@ function horizontal() {
 }
 
 function vertical() {
-    console.log(board);
+    // console.log(board);
     for (let b = 0; b < lineB; b++) {
         let row = board[b];
         for (let a = 0; a < board[0].length; a++) {
             let place = row[a];
-            console.log(place);
+            // console.log(place);
             if (place === board[b + 1][a] &&
                 place === board[b + 2][a] &&
                 place === board[b + 3][a] &&
