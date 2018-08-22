@@ -1,11 +1,21 @@
 h1, h2 {
     display: flex;
     justify-content: center;
+    font-family: "Passion One", sans-serif;
+    letter-spacing: 2px;
 }
-/* 
-body {
-    background-image: url(images/background.png);
-} */
+
+h1 {
+    color: rgb(55, 55, 189);
+    font-size: 50px;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+
+h2 {
+    font-size: 40px;
+    margin-top: 10px;
+}
 
 #container {
     display: flex;
@@ -14,13 +24,10 @@ body {
 
 #game {
     display: flex;
-    justify-content: center;
-    
-}
-
-.gameCol {
-    height: 550px;
-    width: 100px;
+    flex-direction: row;
+    background: url(images/background-col.png);
+    height: 556px;
+    width: 700px;
 }
   
 .column {
@@ -28,9 +35,6 @@ body {
     flex-direction: column-reverse;
     width: 100px;
     height: 550px;
-    border: 3px solid rgb(55, 55, 189);
-    /* background-image: url(images/background-col.png); */
-    background-color: rgb(255, 230, 0);
 }
 
 .piece {
@@ -51,18 +55,11 @@ body {
     background-color: rgb(26, 26, 26);
 }
 
-/* .spaces {
-    align-self: center;
-    border-radius: 50%;
-    height: 85px;
-    width: 85px;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    pointer-events: none;
-    background-color: white;
-} */
-
 #replayButton {
+    font-family: "Passion One", sans-serif;
+    letter-spacing: 2px;
+    font-size: 30px;
+    line-height: 40px;
     background-color: rgb(55, 55, 189);
     border: none;
     color: white;
@@ -70,6 +67,13 @@ body {
     padding: 15px 25px;
     text-align: center;
     text-decoration: none;
+    display: flex;
+}
+
+#leftSide {
+    background-color: rgb(55, 55, 189);
+    border: none;
+    width: 120px;
     display: flex;
     font-size: 22px;
     line-height: 40px;

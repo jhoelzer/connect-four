@@ -15,8 +15,8 @@ for (let x = 0; x < columns.length; x++) {
 
 const numCol = 7;
 const game = document.getElementById("game");
-let lineB = board.length - 3;
-let lineA = board[0].length - 3;
+let columnIndex = board.length - 3;
+let rowIndex = board[0].length - 3;
 let counter = 0;
 
 let currentPlayer = "Red";
@@ -42,7 +42,6 @@ for (let y = 0; y < numCol; y++) {
                 board[x][y] = 1;
             } else {
                 board[x][y] = 2;
-                column.removeEventListener("click", checkWinCondition());
             }
             let newNextPlayer = currentPlayer;
             currentPlayer = nextPlayer;
@@ -72,18 +71,16 @@ function winner() {
     if (currentPlayer == "Red") {
         document.body.appendChild(winMessage).style.color = "black";
         // winning text displayed in black
-        column.removeEventListener("click", winner());
     } else {
         document.body.appendChild(winMessage).style.color = "red";
         // winning text displayed in red
-        column.removeEventListener("click", winner());
     }
 }
 
 function horizontal() {
     for (let b = 0; b < board.length; b++) {
         let row = board[b];
-        for (let a = 0; a < lineA; a++) {
+        for (let a = 0; a < rowIndex; a++) {
             let place = row[a];
             if (
                 place === board[b][a + 1] &&
@@ -99,7 +96,7 @@ function horizontal() {
 
 function vertical() {
     // console.log(board);
-    for (let b = 0; b < lineB; b++) {
+    for (let b = 0; b < columnIndex; b++) {
         let row = board[b];
         for (let a = 0; a < board[0].length; a++) {
             let place = row[a];
@@ -116,9 +113,9 @@ function vertical() {
 }
 
 function rightDiagonal() {
-    for (let b = 0; b < lineB; b++) {
+    for (let b = 0; b < columnIndex; b++) {
         let row = board[b];
-        for (let a = 0; a < lineA; a++) {
+        for (let a = 0; a < rowIndex; a++) {
             let place = row[a];
             if (
                 place === board[b + 1][a + 1] &&
@@ -135,7 +132,7 @@ function rightDiagonal() {
 function leftDiagonal() {
     for (let b = 3; b < board.length; b++) {
         let row = board[b];
-        for (let a = 0; a < lineA; a++) {
+        for (let a = 0; a < rowIndex; a++) {
             let place = row[a];
             if (
                 place === board[b - 1][a + 1] &&
