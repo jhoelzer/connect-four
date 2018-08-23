@@ -1,3 +1,7 @@
+body {
+    background-color: rgb(255, 252, 214);
+}
+
 h1, h2 {
     display: flex;
     justify-content: center;
@@ -25,7 +29,7 @@ h2 {
 #game {
     display: flex;
     flex-direction: row;
-    background: url(images/background-col.png);
+    background: url(images/background-col-transparent.png);
     height: 556px;
     width: 700px;
 }
