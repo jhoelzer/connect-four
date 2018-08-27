@@ -32,6 +32,8 @@ h2 {
     background: url(images/background-col-transparent.png);
     height: 556px;
     width: 700px;
+    border-top: 5px solid rgb(55, 55, 189);
+    border-bottom: 5px solid rgb(55, 55, 189);
 }
   
 .column {
@@ -72,6 +74,11 @@ h2 {
     text-align: center;
     text-decoration: none;
     display: flex;
+    border-radius: 0 50% 50% 0;
+}
+
+#replayButton:active, #replayButton:focus {
+    outline: 0;
 }
 
 #leftSide {
@@ -81,4 +88,5 @@ h2 {
     display: flex;
     font-size: 22px;
     line-height: 40px;
+    border-radius: 50% 0 0 50%;
 }
